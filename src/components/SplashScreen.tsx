@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
 
-export default function SplashScreen() {
+interface SplashScreenProps {
+  onComplete?: () => void;
+}
+
+export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [currentText, setCurrentText] = useState(0);
-  
+  const [isExiting, setIsExiting] = useState(false);
+
   const texts = [
     "Modeling the World",
     "Building Intelligent Worlds",
@@ -14,41 +19,57 @@ export default function SplashScreen() {
       setCurrentText((prev) => (prev + 1) % texts.length);
     }, 1000);
 
-    return () => clearInterval(interval);
+    const exitTimer = setTimeout(() => {
+      setIsExiting(true);
+    }, 2700);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(exitTimer);
+    };
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-background flex items-center justify-center">
+    <div
+      className={`fixed inset-0 bg-background flex items-center justify-center transition-opacity duration-700 ${
+        isExiting ? 'opacity-0' : 'opacity-100'
+      }`}
+    >
       <div className="text-center space-y-8">
         <div className="h-20 flex items-center justify-center">
           <h1
             key={currentText}
-            className="animate-[fadeIn_0.5s_ease-in-out]"
+            className="animate-[fadeInUp_0.6s_ease-out]"
           >
             {texts[currentText]}
           </h1>
         </div>
-        <div className="w-24 h-0.5 bg-foreground mx-auto animate-[expand_1.5s_ease-in-out]" />
+        <div className="w-24 h-0.5 bg-foreground mx-auto animate-[expand_1.5s_ease-out]" />
       </div>
-      
+
       <style>{`
-        @keyframes fadeIn {
-          from {
+        @keyframes fadeInUp {
+          0% {
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(20px);
           }
-          to {
+          100% {
             opacity: 1;
             transform: translateY(0);
           }
         }
-        
+
         @keyframes expand {
-          from {
+          0% {
             width: 0;
+            opacity: 0;
           }
-          to {
+          50% {
+            opacity: 1;
+          }
+          100% {
             width: 6rem;
+            opacity: 1;
           }
         }
       `}</style>
