@@ -1,4 +1,5 @@
 import { Github, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default function HomePage() {
   const publications = [
@@ -150,6 +151,27 @@ export default function HomePage() {
     }
   ];
 
+  useEffect(() => {
+    // Load ClusterMaps script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.id = 'clustrmaps';
+    script.src = '//cdn.clustrmaps.com/map_v2.js?cl=bababa&w=263&t=n&d=qLl9Xkz7YNn9_GFncvBL9hUzVV-_U6mjmKahtDrBhaw&co=1e2327&cmo=bc6161&cmn=358974&ct=ffffff';
+
+    const container = document.getElementById('clustrmaps-container');
+    if (container && !document.getElementById('clustrmaps')) {
+      container.appendChild(script);
+    }
+
+    return () => {
+      // Cleanup on unmount
+      const existingScript = document.getElementById('clustrmaps');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 space-y-16">
       {/* Bio Section */}
@@ -252,6 +274,12 @@ export default function HomePage() {
         <p className="text-foreground">
           Apart from my academic pursuits, I have a passion for Powerlifting. To give you a glimpse of my milestones: I've achieved a Squat of 196kg, Bench Press of 120kg, and Deadlift of 204kg, all at a body weight of 80kg. I'm also open for discussing Powerlifting or working-out stuff.
         </p>
+      </section>
+
+      {/* Visitor Statistics */}
+      <section className="space-y-4">
+        <h2>Visitor Statistics</h2>
+        <div id="clustrmaps-container" className="flex justify-center"></div>
       </section>
     </div>
   );
