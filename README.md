@@ -1,1 +1,11 @@
-This is my Guangyi Liu's public personal website: https://guangyliu.github.io/, which follows the source code to Jon Barron's public academic website: https://jonbarron.info/. You are welcome to clone this code for your own personal use, just please attribute the source to the original website or to this repo. If you do clone this website, feel free to add an attribution link to your own downstream website in index.html if you want.
+
+  # Personal Homepage with Blog
+
+  This is a code bundle for Personal Homepage with Blog. The original project is available at https://www.figma.com/design/M8asaV9ZGcO3DpY5k8yZkR/Personal-Homepage-with-Blog.
+
+  ## Running the code
+
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  
