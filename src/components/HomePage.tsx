@@ -41,6 +41,18 @@ export default function HomePage() {
       )
     },
     {
+      date: "Jul 2026",
+      content: "Visiting IFM US Lab in Sunnyvale."
+    },
+    {
+      date: "Apr 2026",
+      content: (
+        <>
+          🎉 <a href="https://actioneqa.github.io/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all"><em>ActionEQA: Action Interface for Embodied Question Answering</em></a> is accepted to <strong>TMLR</strong>!
+        </>
+      )
+    },
+    {
       date: "Mar 2026",
       content: (
         <>
@@ -75,7 +87,7 @@ export default function HomePage() {
       date: "Jun 2025",
       content: (
         <>
-          Start a new journey at <a href="https://ifm.mbzuai.ac.ae/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">IFM</a> (Institute of Foundation Models), MBZUAI!
+          Start a new journey at <a href="https://ifm.ai/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">IFM</a> (Institute of Foundation Models), MBZUAI!
         </>
       )
     },
@@ -158,8 +170,15 @@ export default function HomePage() {
         <div className="space-y-3 text-foreground">
           <p>
             I'm currently a Senior Research Scientist at{" "}
-            <a href="https://ifm.mbzuai.ac.ae/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">IFM</a>{" "}
+            <a href="https://ifm.ai/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">IFM</a>{" "}
             (Institute of Foundation Models), MBZUAI, where I build <strong>real-time, interactive world models</strong> — pushing on <strong>long-horizon generation</strong>, <strong>long-term memory</strong>, and <strong>efficient inference</strong> — with the goal of helping models understand how the world works and using that understanding to empower <strong>embodied agents</strong>.
+          </p>
+          <p className="hiring">
+            🚀 <strong>We're hiring!</strong> Our team is looking for{" "}
+            <a href="https://jobs.lever.co/ifm-us/7ac9e2ae-7ad2-439f-ba8f-7934a00af1ad" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Machine Learning Engineers</a> and{" "}
+            <a href="https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Research Scientists</a> working on world modeling.
+            Strong interns are also very welcome — feel free to{" "}
+            <a href="mailto:guangyiliu.xx@gmail.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">email me</a>.
           </p>
         </div>
         </div>

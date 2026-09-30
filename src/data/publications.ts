@@ -40,18 +40,6 @@ export const publications: Publication[] = [
     ]
   },
   {
-    title: "World Reasoning Arena",
-    authors: "PAN Team: Qiyue Gao, Kun Zhou, Jiannan Xiang, Zihan Liu, Dequan Yang, Junrong Chen, Arif Ahmad, Cong Zeng, Ganesh Bannur, Xinqi Huang, Zheqi Liu, Yi Gu, Yichi Yang, Guangyi Liu, Zhiting Hu, Zhengzhong Liu, Eric P. Xing",
-    venue: "Technical Report, 2026",
-    tldr: "A benchmark that evaluates world models on action-following fidelity, long-horizon forecasting, and simulative reasoning & planning — beyond next-frame visual quality.",
-    image: "/pubs/wr-arena.jpg",
-    video: "/pubs/wr-arena.mp4",
-    links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2603.25887" },
-      { label: "code", url: "https://github.com/MBZUAI-IFM/WR-Arena" }
-    ]
-  },
-  {
     title: "ActionEQA: Action Interface for Embodied Question Answering",
     authors: "Tianwei Bao, Qineng Wang, Kangrui Wang, Mingkai Deng, Guangyi Liu, Jiayuan Mao, Lawrence Birnbaum, Zhiting Hu, Eric P. Xing, Zhaoran Wang, Manling Li",
     venue: "TMLR 2026",
@@ -61,6 +49,18 @@ export const publications: Publication[] = [
     links: [
       { label: "OpenReview", url: "https://openreview.net/forum?id=HY2ruqdMt4" },
       { label: "website", url: "https://actioneqa.github.io/" }
+    ]
+  },
+  {
+    title: "World Reasoning Arena",
+    authors: "PAN Team: Qiyue Gao, Kun Zhou, Jiannan Xiang, Zihan Liu, Dequan Yang, Junrong Chen, Arif Ahmad, Cong Zeng, Ganesh Bannur, Xinqi Huang, Zheqi Liu, Yi Gu, Yichi Yang, Guangyi Liu, Zhiting Hu, Zhengzhong Liu, Eric P. Xing",
+    venue: "Technical Report, 2026",
+    tldr: "A benchmark that evaluates world models on action-following fidelity, long-horizon forecasting, and simulative reasoning & planning — beyond next-frame visual quality.",
+    image: "/pubs/wr-arena.jpg",
+    video: "/pubs/wr-arena.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2603.25887" },
+      { label: "code", url: "https://github.com/MBZUAI-IFM/WR-Arena" }
     ]
   },
   {
