@@ -1,96 +1,28 @@
-import { Github, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react';
-import { useEffect } from 'react';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Fragment, useEffect, useState } from 'react';
+import { publications } from '../data/publications';
+import PubMedia from './PubMedia';
+
+const ME = 'Guangyi Liu';
+const NEWS_VISIBLE = 5;
+
+// Bold my own name in an author list.
+function Authors({ text }: { text: string }) {
+  const parts = text.split(ME);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <Fragment key={i}>
+          {part}
+          {i < parts.length - 1 && <strong className="pub-me">{ME}</strong>}
+        </Fragment>
+      ))}
+    </>
+  );
+}
 
 export default function HomePage() {
-  const publications = [
-    {
-      title: "PAN: A World Model for General, Interactable, and Long-Horizon World Simulation",
-      authors: "PAN Team",
-      venue: "Technical Report",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2511.09057" },
-        { label: "website", url: "https://ifm.mbzuai.ac.ae/pan/" },
-        { label: "X (Twitter)", url: "https://x.com/guangyi_l/status/1989450577127117179?s=20" },
-        { label: "Forbes", url: "https://www.forbes.com/sites/patrickmoorhead/2025/11/13/the-pan-world-model-from-mbzuai-aims-to-elevate-ai-simulation/" }
-      ]
-    },
-    {
-      title: "Character Mixing for Video Generation",
-      authors: "Tingting Liao, Chongjian Ge, Guangyi Liu, Hao Li, Yi Zhou",
-      venue: "Preprint",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2510.05093" },
-        { label: "code", url: "https://github.com/TingtingLiao/mimix" },
-        { label: "website", url: "https://tingtingliao.github.io/mimix/" }
-      ]
-    },
-    {
-      title: "Voila: Voice-Language Foundation Models for Real-Time Autonomous Interaction and Voice Role-Play",
-      authors: "Yemin Shi*, Yu Shu*, Siwei Dong*, Guangyi Liu*, Jaward Sesay, Jingwen Li, Zhiting Hu",
-      venue: "Technical Report",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2505.02707" },
-        { label: "code", url: "https://github.com/maitrix-org/Voila" },
-        { label: "website", url: "https://voila.maitrix.org/" },
-        { label: "demo", url: "https://hf.co/spaces/maitrix-org/Voila-demo" }
-      ]
-    },
-    {
-      title: "Pandora: Towards General World Model with Natural Language Actions and Video States",
-      authors: "Jiannan Xiang*, Guangyi Liu*, Yi Gu*, Qiyue Gao, Yuting Ning, Yuheng Zha, Zeyu Feng, Tianhua Tao, Shibo Hao, Yemin Shi, Zhengzhong Liu, Eric P. Xing, Zhiting Hu",
-      venue: "Technical Report",
-      links: [
-        { label: "paper", url: "https://world-model.maitrix.org/assets/pandora.pdf" },
-        { label: "code", url: "https://github.com/maitrix-org/Pandora" },
-        { label: "website", url: "https://world-model.ai" },
-        { label: "gallery", url: "https://world-model.maitrix.org/gallery.html" }
-      ]
-    },
-    {
-      title: "Generating, Reconstructing, and Representing Discrete and Continuous Data: Generalized Diffusion with Learnable Encoding-Decoding",
-      authors: "Guangyi Liu, Yu Wang, Zeyu Feng, Qiyu Wu, Liping Tang, Yuan Gao, Zhen Li, Shuguang Cui, Julian McAuley, Eric P. Xing, Zichao Yang, Zhiting Hu",
-      venue: "ICML 2024",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2402.19009" }
-      ]
-    },
-    {
-      title: "Composable Text Controls in Latent Space with ODEs",
-      authors: "Guangyi Liu, Zeyu Feng, Yuan Gao, Zichao Yang, Xiaodan Liang, Junwei Bao, Xiaodong He, Shuguang Cui, Zhen Li, Zhiting Hu",
-      venue: "EMNLP 2023 (Oral Presentation)",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2208.00638" },
-        { label: "code", url: "https://github.com/guangyliu/LatentOps" }
-      ]
-    },
-    {
-      title: "Don't Take It Literally: An Edit-Invariant Sequence Loss for Text Generation",
-      authors: "Guangyi Liu, Zichao Yang, Tianhua Tao, Xiaodan Liang, Junwei Bao, Zhen Li, Xiaodong He, Shuguang Cui, Zhiting Hu",
-      venue: "NAACL 2022 (Oral Presentation)",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2106.15078" },
-        { label: "code", url: "https://github.com/guangyliu/EISL" },
-        { label: "video", url: "https://aclanthology.org/2022.naacl-main.150.mp4" }
-      ]
-    },
-    {
-      title: "Medical-VLBERT: Medical Visual Language BERT for COVID-19 CT Report Generation with Alternate Learning",
-      authors: "Guangyi Liu, Yinghong Liao, Fuyu Wang, Bin Zhang, Lu Zhang, Xiaodan Liang, Xiang Wan, Shaolin Li, Zhen Li, Shuixing Zhang, Shuguang Cui",
-      venue: "IEEE TNNLS 2021",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2108.05067" },
-        { label: "project", url: "https://covid19ct.github.io/" }
-      ]
-    },
-    {
-      title: "Learning to Decouple Relations: Few-Shot Relation Classification with Entity-Guided Attention and Confusion-Aware Training",
-      authors: "Yingyao Wang, Junwei Bao, Guangyi Liu, Youzheng Wu, Xiaodong He, Bowen Zhou, Tiejun Zhao",
-      venue: "COLING 2020",
-      links: [
-        { label: "arXiv", url: "https://arxiv.org/abs/2010.10894" }
-      ]
-    }
-  ];
+  const [showAllNews, setShowAllNews] = useState(false);
 
   const socialLinks = [
     { icon: Mail, label: "Email", url: "mailto:guangyiliu.xx@gmail.com" },
@@ -100,6 +32,22 @@ export default function HomePage() {
   ];
 
   const news = [
+    {
+      date: "Sep 2026",
+      content: (
+        <>
+          🎉 <a href="https://tingtingliao.github.io/mimix/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all"><em>Character Mixing for Video Generation</em></a> is accepted to <strong>NeurIPS 2026</strong>!
+        </>
+      )
+    },
+    {
+      date: "Mar 2026",
+      content: (
+        <>
+          Released <a href="https://arxiv.org/abs/2603.25887" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all"><em>World Reasoning Arena</em></a>, a benchmark for evaluating world models on simulation, forecasting, and planning.
+        </>
+      )
+    },
     {
       date: "Nov 2025",
       content: (
@@ -175,7 +123,8 @@ export default function HomePage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 space-y-16">
       {/* Bio Section */}
-      <section className="space-y-4">
+      <section className="bio">
+        <div className="bio-text space-y-4">
         <h1>Guangyi Liu</h1>
         <div className="flex gap-4">
           {socialLinks.map((link, index) => {
@@ -210,58 +159,57 @@ export default function HomePage() {
           <p>
             I'm currently a Senior Research Scientist at{" "}
             <a href="https://ifm.mbzuai.ac.ae/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">IFM</a>{" "}
-            (Institute of Foundation Models), MBZUAI. My research focuses on world modeling, particularly through the development of{" "}
-            <a href="https://ifm.mbzuai.ac.ae/pan/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">PAN</a>, a general, interactable, and long-horizon world model that unifies perception, action, and reasoning within a generative latent prediction framework. Broadly, I'm interested in generative modeling, multimodal reasoning, and foundation models for simulation and intelligence.
+            (Institute of Foundation Models), MBZUAI, where I build <strong>real-time, interactive world models</strong> — pushing on <strong>long-horizon generation</strong>, <strong>long-term memory</strong>, and <strong>efficient inference</strong> — with the goal of helping models understand how the world works and using that understanding to empower <strong>embodied agents</strong>.
           </p>
         </div>
+        </div>
+        <img className="bio-avatar" src="/avatar.jpg" alt="Guangyi Liu" />
       </section>
 
       {/* News Section */}
       <section className="space-y-4">
         <h2>News</h2>
         <div className="space-y-3">
-          {news.map((item, index) => (
+          {(showAllNews ? news : news.slice(0, NEWS_VISIBLE)).map((item, index) => (
             <div key={index} className="flex gap-4">
               <span className="text-muted-foreground whitespace-nowrap min-w-[120px]">{item.date}</span>
               <p className="text-foreground">{item.content}</p>
             </div>
           ))}
         </div>
-      </section>
-
-      {/* Research Interests */}
-      <section className="space-y-4">
-        <h2>Research Interests</h2>
-        <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1 bg-muted rounded-full text-foreground">World Modeling</span>
-          <span className="px-3 py-1 bg-muted rounded-full text-foreground">Generative Modeling</span>
-          <span className="px-3 py-1 bg-muted rounded-full text-foreground">Multimodal Reasoning</span>
-          <span className="px-3 py-1 bg-muted rounded-full text-foreground">Foundation Models</span>
-          <span className="px-3 py-1 bg-muted rounded-full text-foreground">Simulation</span>
-        </div>
+        {news.length > NEWS_VISIBLE && (
+          <button className="news-toggle" onClick={() => setShowAllNews(!showAllNews)}>
+            {showAllNews ? 'Show less' : `Show all (${news.length})`}
+          </button>
+        )}
       </section>
 
       {/* Publications */}
       <section className="space-y-4">
         <h2>Publications</h2>
-        <div className="space-y-8">
-          {publications.map((pub, index) => (
-            <div key={index} className="space-y-2">
-              <h3 className="text-foreground">{pub.title}</h3>
-              <p className="text-muted-foreground">{pub.authors}</p>
-              <p className="text-muted-foreground">{pub.venue}</p>
-              <div className="flex flex-wrap gap-3">
-                {pub.links.map((link, linkIndex) => (
-                  <a
-                    key={linkIndex}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+        <p className="text-muted-foreground">* denotes equal contribution</p>
+        <div className="pub-list">
+          {publications.map((pub) => (
+            <div key={pub.title} className="pub">
+              <PubMedia image={pub.image} video={pub.video} alt={pub.title} />
+              <div className="pub-body">
+                <h3 className="pub-title">{pub.title}</h3>
+                <p className="pub-authors"><Authors text={pub.authors} /></p>
+                <p className="pub-venue">{pub.venue}</p>
+                <div className="pub-links">
+                  {pub.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+                {pub.tldr && <p className="pub-tldr">{pub.tldr}</p>}
               </div>
             </div>
           ))}

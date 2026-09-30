@@ -2,20 +2,10 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import HomePage from './components/HomePage';
 import BlogPage from './components/BlogPage';
-import SplashScreen from './components/SplashScreen';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'blog'>('home');
-  const [showSplash, setShowSplash] = useState(true);
   const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 3900);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     if (isDark) {
@@ -25,12 +15,8 @@ export default function App() {
     }
   }, [isDark]);
 
-  if (showSplash) {
-    return <SplashScreen />;
-  }
-
   return (
-    <div className="min-h-screen bg-background animate-[fadeIn_0.8s_ease-out]">
+    <div className="min-h-screen bg-background page-fade-in">
       <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm border-b border-border z-10">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex gap-8">
