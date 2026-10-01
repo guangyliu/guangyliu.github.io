@@ -40,6 +40,18 @@ export const publications: Publication[] = [
     ]
   },
   {
+    title: "Mind the RefGAP: Correcting Reference Attention in Diffusion-Based Visual Editing",
+    authors: "Yanan Wang, Shengcai Liao, Guangyi Liu, Xiaodan Liang",
+    venue: "Preprint, 2026",
+    tldr: "Diffusion editors give the reference image surprisingly little attention; RefGAP is a training-free correction of reference attention that improves reference fidelity across seven image/video editors.",
+    image: "/pubs/refgap.jpg",
+    video: "/pubs/refgap.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2609.35708" },
+      { label: "website", url: "https://yanan-wang-cs.github.io/RefGAP/" }
+    ]
+  },
+  {
     title: "ActionEQA: Action Interface for Embodied Question Answering",
     authors: "Tianwei Bao, Qineng Wang, Kangrui Wang, Mingkai Deng, Guangyi Liu, Jiayuan Mao, Lawrence Birnbaum, Zhiting Hu, Eric P. Xing, Zhaoran Wang, Manling Li",
     venue: "TMLR 2026",
