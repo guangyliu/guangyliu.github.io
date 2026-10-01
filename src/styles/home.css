@@ -156,3 +156,7 @@ a.pub-media:hover {
   background: var(--muted);
   border-radius: 6px;
 }
+
+.pub-soon {
+  color: var(--muted-foreground);
+}

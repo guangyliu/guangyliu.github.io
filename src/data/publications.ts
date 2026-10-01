@@ -12,7 +12,7 @@
 
 export interface PubLink {
   label: string;
-  url: string;
+  url?: string;   // omit for links that are not out yet ("coming soon")
 }
 
 export interface Publication {
@@ -34,6 +34,7 @@ export const publications: Publication[] = [
     image: "/pubs/memorizon.jpg",
     video: "/pubs/memorizon.mp4",
     links: [
+      { label: "arXiv" },
       { label: "website", url: "https://tingtingliao.github.io/memorizon/" },
       { label: "code", url: "https://github.com/TingtingLiao/memorizon" },
       { label: "weights", url: "https://huggingface.co/Luffuly/memorizon" }
@@ -219,5 +220,7 @@ export const publications: Publication[] = [
 // otherwise the paper itself.
 export function primaryUrl(pub: Publication): string {
   const find = (labels: string[]) => pub.links.find((l) => labels.includes(l.label.toLowerCase()));
-  return (find(["website", "project"]) ?? find(["arxiv", "paper", "openreview"]) ?? pub.links[0]).url;
+  const withUrl = (l?: PubLink) => (l && l.url ? l : undefined);
+  return (withUrl(find(["website", "project"])) ?? withUrl(find(["arxiv", "paper", "openreview"])) ??
+    pub.links.find((l) => l.url))!.url!;
 }

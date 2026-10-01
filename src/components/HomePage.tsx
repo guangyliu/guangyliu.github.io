@@ -197,7 +197,9 @@ export default function HomePage() {
                 <p className="pub-authors"><Authors text={pub.authors} /></p>
                 <p className="pub-venue">{pub.venue}</p>
                 <div className="pub-links">
-                  {pub.links.map((link) => (
+                  {pub.links.map((link) => !link.url ? (
+                    <span key={link.label} className="pub-soon">{link.label} (coming soon)</span>
+                  ) : (
                     <a
                       key={link.label}
                       href={link.url}
