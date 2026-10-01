@@ -1,6 +1,6 @@
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import { Fragment, useState } from 'react';
-import { publications } from '../data/publications';
+import { publications, primaryUrl } from '../data/publications';
 import PubMedia from './PubMedia';
 
 const ME = 'Guangyi Liu';
@@ -189,9 +189,11 @@ export default function HomePage() {
         <div className="pub-list">
           {publications.map((pub) => (
             <div key={pub.title} className="pub">
-              <PubMedia image={pub.image} video={pub.video} alt={pub.title} />
+              <PubMedia image={pub.image} video={pub.video} alt={pub.title} href={primaryUrl(pub)} />
               <div className="pub-body">
-                <h3 className="pub-title">{pub.title}</h3>
+                <h3 className="pub-title">
+                  <a href={primaryUrl(pub)} target="_blank" rel="noopener noreferrer">{pub.title}</a>
+                </h3>
                 <p className="pub-authors"><Authors text={pub.authors} /></p>
                 <p className="pub-venue">{pub.venue}</p>
                 <div className="pub-links">

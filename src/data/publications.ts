@@ -40,6 +40,20 @@ export const publications: Publication[] = [
     ]
   },
   {
+    title: "LOCI: Spatial Linear Memory for Streaming World Models",
+    authors: "Ji Xia, Tingting Liao, Xuezhi Liang, Hao Li, Guangyi Liu",
+    venue: "Preprint, 2026",
+    tldr: "A hybrid spatial memory for video world models — camera-conditioned recurrent linear memory plus a cache of past observations — that reproduces revisited places more faithfully and streams long videos at constant memory.",
+    image: "/pubs/loci.jpg",
+    video: "/pubs/loci.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2609.40222" },
+      { label: "website", url: "https://xiaji2021.github.io/LOCI/" },
+      { label: "more results", url: "https://loci-iclr.github.io/" },
+      { label: "code", url: "https://github.com/xiaji2021/LOCI" }
+    ]
+  },
+  {
     title: "Mind the RefGAP: Correcting Reference Attention in Diffusion-Based Visual Editing",
     authors: "Yanan Wang, Shengcai Liao, Guangyi Liu, Xiaodan Liang",
     venue: "Preprint, 2026",
@@ -49,6 +63,19 @@ export const publications: Publication[] = [
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2609.35708" },
       { label: "website", url: "https://yanan-wang-cs.github.io/RefGAP/" }
+    ]
+  },
+  {
+    title: "DirectSwap: Paired, Mask-Free Video Head Swapping with Full-Reference Evaluation",
+    authors: "Yanan Wang, Shengcai Liao, Panwen Hu, Xin Li, Fan Yang, Guangyi Liu, Xiaodan Liang",
+    venue: "Preprint, 2026",
+    tldr: "Builds HeadSwapBench, the first cross-identity paired dataset for video head swapping, and trains a mask-free model that replaces the whole head while keeping pose, expression and scene.",
+    image: "/pubs/directswap.jpg",
+    video: "/pubs/directswap.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2512.09417" },
+      { label: "website", url: "https://yanan-wang-cs.github.io/DirectSwap/" },
+      { label: "code", url: "https://github.com/Yanan-Wang-cs/DirectSwap" }
     ]
   },
   {
@@ -187,3 +214,10 @@ export const publications: Publication[] = [
     ]
   }
 ];
+
+// Where clicking a paper's title or thumbnail goes: its website if it has one,
+// otherwise the paper itself.
+export function primaryUrl(pub: Publication): string {
+  const find = (labels: string[]) => pub.links.find((l) => labels.includes(l.label.toLowerCase()));
+  return (find(["website", "project"]) ?? find(["arxiv", "paper", "openreview"]) ?? pub.links[0]).url;
+}

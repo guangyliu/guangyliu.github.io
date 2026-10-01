@@ -64,6 +64,26 @@
   border: 1px solid var(--border);
 }
 
+a.pub-media {
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.pub-media:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.pub .pub-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pub .pub-title a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .pub-media img,
 .pub-media video {
   display: block;

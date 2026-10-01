@@ -4,11 +4,12 @@ interface PubMediaProps {
   image: string;
   video?: string;
   alt: string;
+  href?: string;
 }
 
 // Thumbnail for a publication. Shows `image`; if `video` is given, the clip is
 // only fetched once the card is near the viewport and pauses when off-screen.
-export default function PubMedia({ image, video, alt }: PubMediaProps) {
+export default function PubMedia({ image, video, alt, href }: PubMediaProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [load, setLoad] = useState(false);
 
@@ -31,8 +32,9 @@ export default function PubMedia({ image, video, alt }: PubMediaProps) {
     return () => observer.disconnect();
   }, [video]);
 
+  const Wrapper = href ? 'a' : 'div';
   return (
-    <div className="pub-media">
+    <Wrapper className="pub-media" {...(href ? { href, target: '_blank', rel: 'noopener noreferrer' } : {})}>
       {video ? (
         <video
           ref={videoRef}
@@ -48,6 +50,6 @@ export default function PubMedia({ image, video, alt }: PubMediaProps) {
       ) : (
         <img src={image} alt={alt} loading="lazy" decoding="async" />
       )}
-    </div>
+    </Wrapper>
   );
 }
