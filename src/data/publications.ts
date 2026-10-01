@@ -27,16 +27,16 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
-    title: "Character Mixing for Video Generation",
-    authors: "Tingting Liao, Chongjian Ge, Guangyi Liu, Hao Li, Yi Zhou",
-    venue: "NeurIPS 2026",
-    tldr: "Lets characters from different worlds (e.g. cartoon and live-action) interact naturally in one generated video while keeping their identity and style.",
-    image: "/pubs/mimix.jpg",
-    video: "/pubs/mimix.mp4",
+    title: "Memorizon: Training World Models Beyond Their Context Window",
+    authors: "Tingting Liao, Xuezhi Liang, Hao Li, Guangyi Liu",
+    venue: "Preprint, 2026",
+    tldr: "Trains world models on minutes-long spans that contain both visits to a place, while each chunk attends only to a small bank of retrieved frames — so revisited places stay consistent at bounded cost.",
+    image: "/pubs/memorizon.jpg",
+    video: "/pubs/memorizon.mp4",
     links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2510.05093" },
-      { label: "code", url: "https://github.com/TingtingLiao/mimix" },
-      { label: "website", url: "https://tingtingliao.github.io/mimix/" }
+      { label: "website", url: "https://tingtingliao.github.io/memorizon/" },
+      { label: "code", url: "https://github.com/TingtingLiao/memorizon" },
+      { label: "weights", url: "https://huggingface.co/Luffuly/memorizon" }
     ]
   },
   {
@@ -49,6 +49,19 @@ export const publications: Publication[] = [
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2609.35708" },
       { label: "website", url: "https://yanan-wang-cs.github.io/RefGAP/" }
+    ]
+  },
+  {
+    title: "Character Mixing for Video Generation",
+    authors: "Tingting Liao, Chongjian Ge, Guangyi Liu, Hao Li, Yi Zhou",
+    venue: "NeurIPS 2026",
+    tldr: "Lets characters from different worlds (e.g. cartoon and live-action) interact naturally in one generated video while keeping their identity and style.",
+    image: "/pubs/mimix.jpg",
+    video: "/pubs/mimix.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2510.05093" },
+      { label: "code", url: "https://github.com/TingtingLiao/mimix" },
+      { label: "website", url: "https://tingtingliao.github.io/mimix/" }
     ]
   },
   {
