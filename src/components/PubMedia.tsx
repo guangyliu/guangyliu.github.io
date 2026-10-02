@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { asset } from '../version';
 
 interface PubMediaProps {
   image: string;
@@ -38,8 +39,8 @@ export default function PubMedia({ image, video, alt, href }: PubMediaProps) {
       {video ? (
         <video
           ref={videoRef}
-          src={load ? video : undefined}
-          poster={image}
+          src={load ? asset(video) : undefined}
+          poster={asset(image)}
           muted
           loop
           playsInline
@@ -48,7 +49,7 @@ export default function PubMedia({ image, video, alt, href }: PubMediaProps) {
           aria-label={alt}
         />
       ) : (
-        <img src={image} alt={alt} loading="lazy" decoding="async" />
+        <img src={asset(image)} alt={alt} loading="lazy" decoding="async" />
       )}
     </Wrapper>
   );

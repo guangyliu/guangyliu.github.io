@@ -1,11 +1,49 @@
 
-  import { defineConfig } from 'vite';
+  import { defineConfig, type Plugin } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
+  import fs from 'fs';
+  import crypto from 'crypto';
+  import { execSync } from 'child_process';
+
+  // Site version: "v<commit count>", computed at build time. Also exposes a
+  // content hash for every file in public/ so a changed image/video gets a new
+  // URL (?v=<hash>) and browsers re-download it, while unchanged files stay cached.
+  function siteVersion(): Plugin {
+    const git = (cmd: string) => {
+      try { return execSync(cmd, { cwd: __dirname }).toString().trim(); } catch { return ''; }
+    };
+    const version = `v${git('git rev-list --count HEAD') || '0'}`;
+    const buildDate = new Date().toISOString();
+    const publicDir = path.resolve(__dirname, 'public');
+    const hashes: Record<string, string> = {};
+    const walk = (dir: string) => {
+      for (const name of fs.readdirSync(dir)) {
+        const full = path.join(dir, name);
+        if (fs.statSync(full).isDirectory()) walk(full);
+        else hashes['/' + path.relative(publicDir, full).split(path.sep).join('/')] =
+          crypto.createHash('md5').update(fs.readFileSync(full)).digest('hex').slice(0, 8);
+      }
+    };
+    if (fs.existsSync(publicDir)) walk(publicDir);
+    return {
+      name: 'site-version',
+      config: () => ({
+        define: {
+          __APP_VERSION__: JSON.stringify(version),
+          __BUILD_DATE__: JSON.stringify(buildDate),
+          __ASSET_HASHES__: JSON.stringify(hashes),
+        },
+      }),
+      generateBundle() {
+        this.emitFile({ type: 'asset', fileName: 'version.json', source: JSON.stringify({ version, buildDate }) });
+      },
+    };
+  }
 
   export default defineConfig({
     base: '/',
-    plugins: [react()],
+    plugins: [react(), siteVersion()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {

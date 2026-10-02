@@ -2,10 +2,19 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import HomePage from './components/HomePage';
 import BlogPage from './components/BlogPage';
+import { checkForUpdate } from './version';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'blog'>('home');
   const [isDark, setIsDark] = useState(false);
+
+  // Pick up a newly deployed version on load and whenever the tab comes back into view.
+  useEffect(() => {
+    checkForUpdate();
+    const onVisible = () => { if (document.visibilityState === 'visible') checkForUpdate(); };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => document.removeEventListener('visibilitychange', onVisible);
+  }, []);
 
   useEffect(() => {
     if (isDark) {

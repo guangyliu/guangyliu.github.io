@@ -2,6 +2,7 @@ import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import { Fragment, useState } from 'react';
 import { publications, primaryUrl } from '../data/publications';
 import PubMedia from './PubMedia';
+import { asset, VERSION, BUILD_DATE } from '../version';
 
 const ME = 'Guangyi Liu';
 const NEWS_VISIBLE = 5;
@@ -161,7 +162,7 @@ export default function HomePage() {
           </p>
         </div>
         </div>
-        <img className="bio-avatar" src="/avatar.jpg" alt="Guangyi Liu" />
+        <img className="bio-avatar" src={asset('/avatar.jpg')} alt="Guangyi Liu" />
       </section>
 
       {/* News Section */}
@@ -225,6 +226,10 @@ export default function HomePage() {
           Apart from my academic pursuits, I have a passion for Powerlifting. To give you a glimpse of my milestones: I've achieved a Squat of 196kg, Bench Press of 120kg, and Deadlift of 204kg, all at a body weight of 80kg. I'm also open for discussing Powerlifting or working-out stuff.
         </p>
       </section>
+
+      <footer className="site-version">
+        {VERSION} · updated {BUILD_DATE.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+      </footer>
     </div>
   );
 }

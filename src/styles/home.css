@@ -160,3 +160,11 @@ a.pub-media:hover {
 .pub-soon {
   color: var(--muted-foreground);
 }
+
+/* Version line at the bottom of the page */
+.site-version {
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  text-align: center;
+  padding-top: 1rem;
+}
