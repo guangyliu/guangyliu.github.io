@@ -50,7 +50,8 @@ export const publications: Publication[] = [
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2609.40222" },
       { label: "website", url: "https://xiaji2021.github.io/LOCI/" },
-      { label: "code", url: "https://github.com/xiaji2021/LOCI" }
+      { label: "code", url: "https://github.com/xiaji2021/LOCI" },
+      { label: "dataset", url: "https://huggingface.co/datasets/sum0214/LOCI-revisit-data" }
     ]
   },
   {
