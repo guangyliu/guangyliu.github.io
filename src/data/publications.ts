@@ -34,7 +34,7 @@ export const publications: Publication[] = [
     image: "/pubs/memorizon.jpg",
     video: "/pubs/memorizon.mp4",
     links: [
-      { label: "arXiv" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2610.00544" },
       { label: "website", url: "https://tingtingliao.github.io/memorizon/" },
       { label: "code", url: "https://github.com/TingtingLiao/memorizon" },
       { label: "weights", url: "https://huggingface.co/Luffuly/memorizon" }
