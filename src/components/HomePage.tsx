@@ -6,6 +6,7 @@ import { asset, VERSION, BUILD_DATE } from '../version';
 
 const ME = 'Guangyi Liu';
 const NEWS_VISIBLE = 5;
+const SHOW_NEWS = false;   // News section hidden for now; set to true to bring it back
 
 // Bold my own name in an author list.
 function Authors({ text }: { text: string }) {
@@ -166,6 +167,7 @@ export default function HomePage() {
       </section>
 
       {/* News Section */}
+      {SHOW_NEWS && (
       <section className="space-y-4">
         <h2>News</h2>
         <div className="space-y-3">
@@ -182,6 +184,7 @@ export default function HomePage() {
           </button>
         )}
       </section>
+      )}
 
       {/* Publications */}
       <section className="space-y-4">

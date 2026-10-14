@@ -27,6 +27,32 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "Prospective Forcing: Learning to Look Ahead for Autoregressive Long Video Diffusion",
+    authors: "Yifan Shen, Yewei Xia, Gongxu Luo, Peiyuan Zhu, Boyang Sun, Zhenhao Chen, Guangyi Liu, Guangyi Chen, Kun Zhang",
+    venue: "Preprint, 2026",
+    tldr: "Adds lightweight heads that predict several future chunks at once, so an autoregressive video generator learns to look ahead: longer videos stay consistent, and accepted predictions skip backbone passes to speed up sampling.",
+    image: "/pubs/pforcing.jpg",
+    video: "/pubs/pforcing.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2610.14654" },
+      { label: "website", url: "https://sanshuiii.github.io/ProspectiveForcing/" },
+      { label: "code", url: "https://github.com/sanshuiii/ProspectiveForcing" }
+    ]
+  },
+  {
+    title: "Streaming Code World Model",
+    authors: "Tingting Liao, Guangyi Liu",
+    venue: "Open-source project, 2026",
+    tldr: "Code World Model is slow and its proxy code was never released. We open-source a complete proxy pipeline and turn MiniMax-H3 into a causal, 4-step streaming model: each chunk is generated from the live proxy in ~5 s on one H200, 9× faster than 35-step sampling.",
+    image: "/pubs/scwm.jpg",
+    video: "/pubs/scwm.mp4",
+    links: [
+      { label: "code", url: "https://github.com/TingtingLiao/streaming-code-world-model" },
+      { label: "proxy code", url: "https://github.com/guangyliu/open-code-world-model" },
+      { label: "checkpoints", url: "https://huggingface.co/Luffuly/streaming-code-world-model" }
+    ]
+  },
+  {
     title: "Memorizon: Training World Models Beyond Their Context Window",
     authors: "Tingting Liao, Xuezhi Liang, Hao Li, Guangyi Liu",
     venue: "Preprint, 2026",
