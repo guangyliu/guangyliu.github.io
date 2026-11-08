@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 // Tally form that collects applications. Paste the form id from its share link
 // (tally.so/r/<id>); while empty the page asks applicants to email instead.
-const TALLY_FORM_ID = '';
+const TALLY_FORM_ID = 'NqDPgN';
 
 const LINK = "text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all";
 
@@ -52,10 +52,10 @@ export default function JoinPage() {
         <h2>Apply</h2>
         {TALLY_FORM_ID ? (
           <iframe
+            src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
             data-tally-src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
-            loading="lazy"
             width="100%"
-            height="900"
+            height="1400"
             frameBorder={0}
             title="Application form"
             className="join-form"
