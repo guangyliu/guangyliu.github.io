@@ -2,10 +2,25 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import HomePage from './components/HomePage';
 import BlogPage from './components/BlogPage';
+import JoinPage from './components/JoinPage';
 import { checkForUpdate } from './version';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'blog'>('home');
+  // /join is served as its own path (a copy of index.html, see vite.config.ts).
+  const [currentPage, setCurrentPageState] = useState<'home' | 'blog' | 'join'>(
+    () => (window.location.pathname.replace(/\/+$/, '') === '/join' ? 'join' : 'home'));
+  const setCurrentPage = (page: 'home' | 'blog' | 'join') => {
+    const path = page === 'join' ? '/join' : '/';
+    if (window.location.pathname !== path) window.history.pushState(null, '', path);
+    setCurrentPageState(page);
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    const onPop = () => setCurrentPageState(window.location.pathname.replace(/\/+$/, '') === '/join' ? 'join' : 'home');
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
   const [isDark, setIsDark] = useState(false);
 
   // Pick up a newly deployed version on load and whenever the tab comes back into view.
@@ -28,12 +43,18 @@ export default function App() {
     <div className="min-h-screen bg-background page-fade-in">
       <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm border-b border-border z-10">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex gap-8">
+          <div className="flex gap-8" style={{ gap: "2rem" }}>
             <button
               onClick={() => setCurrentPage('home')}
               className="hover:opacity-60 transition-opacity"
             >
               Home
+            </button>
+            <button
+              onClick={() => setCurrentPage('join')}
+              className="hover:opacity-60 transition-opacity"
+            >
+              Join us
             </button>
             {/* Blog button hidden until content is ready */}
             {/* <button
@@ -60,7 +81,7 @@ export default function App() {
       </nav>
 
       <main className="pt-20">
-        {currentPage === 'home' ? <HomePage /> : <BlogPage />}
+        {currentPage === 'home' ? <HomePage /> : currentPage === 'join' ? <JoinPage /> : <BlogPage />}
       </main>
     </div>
   );

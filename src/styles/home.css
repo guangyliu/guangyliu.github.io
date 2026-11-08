@@ -168,3 +168,31 @@ a.pub-media:hover {
   text-align: center;
   padding-top: 1rem;
 }
+
+/* Join page */
+.join-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.join-role {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--color-emerald-500, #10b981);
+  border-radius: 8px;
+}
+
+.join-role h3 {
+  margin: 0 0 0.35rem;
+}
+
+.join-role p,
+.join-note {
+  color: var(--muted-foreground);
+}
+
+.join-form {
+  border: 0;
+  width: 100%;
+}

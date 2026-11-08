@@ -38,6 +38,14 @@
       generateBundle() {
         this.emitFile({ type: 'asset', fileName: 'version.json', source: JSON.stringify({ version, buildDate }) });
       },
+      // GitHub Pages has no SPA fallback: give each client-side route its own copy of index.html.
+      writeBundle(options) {
+        const dir = options.dir!;
+        for (const route of ['join']) {
+          fs.mkdirSync(path.join(dir, route), { recursive: true });
+          fs.copyFileSync(path.join(dir, 'index.html'), path.join(dir, route, 'index.html'));
+        }
+      },
     };
   }
 
