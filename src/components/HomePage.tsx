@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { Fragment, useState } from 'react';
 import { publications, primaryUrl } from '../data/publications';
 import PubMedia from './PubMedia';
@@ -7,6 +7,15 @@ import { asset, VERSION, BUILD_DATE } from '../version';
 const ME = 'Guangyi Liu';
 const NEWS_VISIBLE = 5;
 const SHOW_NEWS = false;   // News section hidden for now; set to true to bring it back
+
+// X (Twitter) logo from Simple Icons (CC0), drawn a little smaller to match the line icons.
+function XLogo({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path transform="translate(2 2) scale(0.833)" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/>
+    </svg>
+  );
+}
 
 // Bold my own name in an author list.
 function Authors({ text }: { text: string }) {
@@ -29,7 +38,7 @@ export default function HomePage() {
   const socialLinks = [
     { icon: Mail, label: "Email", url: "mailto:guangyiliu.xx@gmail.com" },
     { icon: Github, label: "GitHub", url: "https://github.com/guangyliu" },
-    { icon: Twitter, label: "X (Twitter)", url: "https://x.com/guangyi_l" },
+    { icon: XLogo, label: "X (Twitter)", url: "https://x.com/guangyi_l" },
     { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/in/guangyi-liu/" },
   ];
 
