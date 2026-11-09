@@ -185,10 +185,10 @@ export default function HomePage() {
               <li>
                 <strong>IFM</strong> —{" "}
                 <a href="https://jobs.lever.co/ifm-us/7ac9e2ae-7ad2-439f-ba8f-7934a00af1ad" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Machine Learning Engineers</a> and{" "}
-                <a href="https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Research Scientists</a>; strong research interns are also very welcome.
+                <a href="https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Research Scientists</a>.
               </li>
               <li>
-                <strong>MBZUAI</strong> — <strong>PhD and postdoc positions</strong> with{" "}
+                <strong>MBZUAI</strong> — <strong>PhD, postdoc and visiting student positions</strong> with{" "}
                 <a href="https://www.cs.cmu.edu/~epxing/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Prof. Eric Xing</a>, with whom we work closely.
               </li>
             </ul>

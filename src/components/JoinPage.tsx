@@ -10,21 +10,21 @@ const groups = [
   {
     name: 'IFM',
     url: 'https://ifm.ai/',
-    intro: <>Full-time roles and internships with our team at IFM (Institute of Foundation Models).</>,
+    intro: <>Full-time roles with our team at IFM (Institute of Foundation Models).</>,
     positions: [
       { title: 'Machine Learning Engineer', body: 'Full-time position.', url: 'https://jobs.lever.co/ifm-us/7ac9e2ae-7ad2-439f-ba8f-7934a00af1ad' },
       { title: 'Research Scientist', body: 'Full-time position.', url: 'https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5' },
-      { title: 'Research Intern', body: 'Research internships with our team at IFM.' },
     ],
   },
   {
     name: 'MBZUAI',
     url: 'https://mbzuai.ac.ae/',
-    intro: <>PhD and postdoc positions at MBZUAI with{" "}
+    intro: <>PhD, postdoc and visiting student positions at MBZUAI with{" "}
       <a href="https://www.cs.cmu.edu/~epxing/" target="_blank" rel="noopener noreferrer" className={LINK}>Prof. Eric Xing</a>, with whom we work closely.</>,
     positions: [
       { title: 'PhD', body: 'PhD positions at MBZUAI, working on world models.' },
       { title: 'Postdoc', body: 'Postdoctoral positions at MBZUAI, working on world models.' },
+      { title: 'Visiting Student', body: 'Visiting student positions at MBZUAI, working on world models.' },
     ],
   },
 ];
