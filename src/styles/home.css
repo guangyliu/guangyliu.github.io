@@ -157,6 +157,10 @@ a.pub-media:hover {
   border-radius: 6px;
 }
 
+.hiring p { margin: 0; }
+.hiring ul { list-style: disc; padding-left: 1.25rem; margin: 0.4rem 0; }
+.hiring li { margin: 0.2rem 0; }
+
 .pub-soon {
   color: var(--muted-foreground);
 }

@@ -179,15 +179,21 @@ export default function HomePage() {
             <a href="https://ifm.ai/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">IFM</a>{" "}
             (Institute of Foundation Models), MBZUAI, where I build <strong>real-time, interactive world models</strong> — pushing on <strong>long-horizon generation</strong>, <strong>long-term memory</strong>, and <strong>efficient inference</strong> — with the goal of helping models understand how the world works and using that understanding to empower <strong>embodied agents</strong>.
           </p>
-          <p className="hiring">
-            🚀 <strong>We're hiring!</strong> Our team is looking for{" "}
-            <a href="https://jobs.lever.co/ifm-us/7ac9e2ae-7ad2-439f-ba8f-7934a00af1ad" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Machine Learning Engineers</a> and{" "}
-            <a href="https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Research Scientists</a> working on world modeling, based in <strong>Abu Dhabi, UAE</strong>.
-            We also work closely with{" "}
-            <a href="https://www.cs.cmu.edu/~epxing/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Prof. Eric Xing</a>, and <strong>PhD and postdoc positions at MBZUAI</strong> are open.
-            Strong interns are also very welcome — please{" "}
-            <a href="/join" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">apply here</a>.
-          </p>
+          <div className="hiring">
+            <p>🚀 <strong>We're hiring!</strong> Based in <strong>Abu Dhabi, UAE</strong>, working on world modeling:</p>
+            <ul>
+              <li>
+                <strong>IFM</strong> —{" "}
+                <a href="https://jobs.lever.co/ifm-us/7ac9e2ae-7ad2-439f-ba8f-7934a00af1ad" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Machine Learning Engineers</a> and{" "}
+                <a href="https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Research Scientists</a>; strong research interns are also very welcome.
+              </li>
+              <li>
+                <strong>MBZUAI</strong> — <strong>PhD and postdoc positions</strong> with{" "}
+                <a href="https://www.cs.cmu.edu/~epxing/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Prof. Eric Xing</a>, with whom we work closely.
+              </li>
+            </ul>
+            <p>Interested? Please <a href="/join" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">apply here</a>.</p>
+          </div>
         </div>
         </div>
         <img className="bio-avatar" src={asset('/avatar.jpg')} alt="Guangyi Liu" />

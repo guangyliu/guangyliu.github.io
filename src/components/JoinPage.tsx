@@ -6,10 +6,27 @@ const TALLY_FORM_ID = 'NqDPgN';
 
 const LINK = "text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all";
 
-const positions = [
-  { title: 'PhD', body: 'PhD positions at MBZUAI, working on world models with our team.' },
-  { title: 'Postdoc', body: 'Postdoctoral positions at MBZUAI, working on world models with our team.' },
-  { title: 'Research Intern', body: 'Research internships with our team at IFM, MBZUAI.' },
+const groups = [
+  {
+    name: 'IFM',
+    url: 'https://ifm.ai/',
+    intro: <>Full-time roles and internships with our team at IFM (Institute of Foundation Models).</>,
+    positions: [
+      { title: 'Machine Learning Engineer', body: 'Full-time position.', url: 'https://jobs.lever.co/ifm-us/7ac9e2ae-7ad2-439f-ba8f-7934a00af1ad' },
+      { title: 'Research Scientist', body: 'Full-time position.', url: 'https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5' },
+      { title: 'Research Intern', body: 'Research internships with our team at IFM.' },
+    ],
+  },
+  {
+    name: 'MBZUAI',
+    url: 'https://mbzuai.ac.ae/',
+    intro: <>PhD and postdoc positions at MBZUAI with{" "}
+      <a href="https://www.cs.cmu.edu/~epxing/" target="_blank" rel="noopener noreferrer" className={LINK}>Prof. Eric Xing</a>, with whom we work closely.</>,
+    positions: [
+      { title: 'PhD', body: 'PhD positions at MBZUAI, working on world models.' },
+      { title: 'Postdoc', body: 'Postdoctoral positions at MBZUAI, working on world models.' },
+    ],
+  },
 ];
 
 export default function JoinPage() {
@@ -33,19 +50,25 @@ export default function JoinPage() {
           inference. We work closely with{" "}
           <a href="https://www.cs.cmu.edu/~epxing/" target="_blank" rel="noopener noreferrer" className={LINK}>Prof. Eric Xing</a>.
         </p>
-        <div className="join-roles">
-          {positions.map(p => (
-            <div key={p.title} className="join-role">
-              <h3>{p.title}</h3>
-              <p>{p.body}</p>
+        {groups.map(g => (
+          <div key={g.name} className="space-y-3">
+            <h2>
+              <a href={g.url} target="_blank" rel="noopener noreferrer" className={LINK}>{g.name}</a>
+            </h2>
+            <p>{g.intro}</p>
+            <div className="join-roles">
+              {g.positions.map(p => (
+                <div key={p.title} className="join-role">
+                  <h3>{p.title}</h3>
+                  <p>{p.body}</p>
+                  {p.url && (
+                    <p><a href={p.url} target="_blank" rel="noopener noreferrer" className={LINK}>Job posting</a></p>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <p className="join-note">
-          Looking for a full-time role? See our openings for{" "}
-          <a href="https://jobs.lever.co/ifm-us/7ac9e2ae-7ad2-439f-ba8f-7934a00af1ad" target="_blank" rel="noopener noreferrer" className={LINK}>Machine Learning Engineers</a> and{" "}
-          <a href="https://jobs.lever.co/ifm-us/2c2f5a7a-79f6-40ff-9274-638a047602c5" target="_blank" rel="noopener noreferrer" className={LINK}>Research Scientists</a>.
-        </p>
+          </div>
+        ))}
       </section>
 
       <section className="space-y-4">
