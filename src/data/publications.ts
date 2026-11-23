@@ -27,6 +27,33 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "Point Dynamics as Proxy for Robotic World Models",
+    authors: "Dong An, Tianyu Liu, Haoran Ding, Wen Yang, Anqing Duan, Zhengzhong Liu, Eric P. Xing, Guangyi Liu",
+    venue: "Preprint, 2026",
+    tldr: "Robotic world models follow the action, but the objects they touch often don't. We simulate how scene points move in 3D, then let the video model render that motion — cutting object motion error by 8.6% on DROID and 8.1% on a real bimanual robot, with no loss in image quality.",
+    image: "/pubs/pointdyn.jpg",
+    video: "/pubs/pointdyn.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2611.25946" },
+      { label: "website", url: "https://marsaki.github.io/point-dynamics-proxy/" },
+      { label: "code" }
+    ]
+  },
+  {
+    title: "GameScrub: Learning HUD Removal from Real Gameplay with Recovered Targets",
+    authors: "Mohammad Areeb Qazi, Yiyan Hu, Yanan Wang, Xuezhi Liang, Xin Li, Fan Yang, Xin Gao, Guangyi Liu",
+    venue: "Preprint, 2026",
+    tldr: "Instead of pasting synthetic HUDs onto clean footage, we keep real gameplay as the input and recover a clean target by inpainting only the HUD. Trained on these pairs, a mask-free video editor removes 90% of HUD elements on real clips, against 59% for the strongest prior method, in 11 denoising steps.",
+    image: "/pubs/gamescrub.jpg",
+    video: "/pubs/gamescrub.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2611.27547" },
+      { label: "website", url: "https://areeb2735.github.io/gamescrub/" },
+      { label: "code" },
+      { label: "weights", url: "https://huggingface.co/mohammadareebqazi/GameScrub" }
+    ]
+  },
+  {
     title: "Streaming Code World Model",
     authors: "Tingting Liao, Guangyi Liu",
     venue: "Open-source project, 2026",

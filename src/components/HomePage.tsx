@@ -44,6 +44,15 @@ export default function HomePage() {
 
   const news = [
     {
+      date: "Nov 2026",
+      content: (
+        <>
+          Released <a href="https://marsaki.github.io/point-dynamics-proxy/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all"><em>Point Dynamics as Proxy for Robotic World Models</em></a> with Prof. Eric Xing, and{" "}
+          <a href="https://areeb2735.github.io/gamescrub/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all"><em>GameScrub</em></a> for removing HUDs from real gameplay videos.
+        </>
+      )
+    },
+    {
       date: "Sep 2026",
       content: (
         <>
