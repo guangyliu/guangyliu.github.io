@@ -49,7 +49,7 @@ export const publications: Publication[] = [
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2611.27547" },
       { label: "website", url: "https://areeb2735.github.io/gamescrub/" },
-      { label: "code" },
+      { label: "code", url: "https://github.com/MBZUAI-IFM/GameScrub" },
       { label: "weights", url: "https://huggingface.co/mohammadareebqazi/GameScrub" }
     ]
   },
