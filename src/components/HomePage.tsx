@@ -231,7 +231,6 @@ export default function HomePage() {
       {/* Publications */}
       <section className="space-y-4">
         <h2>Publications</h2>
-        <p className="text-muted-foreground">* denotes equal contribution</p>
         <div className="pub-list">
           {publications.map((pub) => (
             <div key={pub.title} className="pub">
