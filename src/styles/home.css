@@ -13,8 +13,15 @@
 /* Bio */
 .bio {
   display: flex;
-  gap: 2.5rem;
+  flex-wrap: wrap;
+  column-gap: 2.5rem;
+  row-gap: 1.25rem;
   align-items: flex-start;
+}
+
+/* the hiring box takes its own full-width row under the text and the photo */
+.bio > .hiring {
+  flex-basis: 100%;
 }
 
 .bio-text {
@@ -135,8 +142,16 @@ a.pub-media:hover {
 
 @media (max-width: 640px) {
   .bio {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 1.25rem;
+  }
+
+  .bio-avatar {
+    order: -1;
+  }
+
+  .bio > .hiring {
+    flex-basis: auto;
   }
 
   .bio-avatar {
