@@ -237,9 +237,10 @@ export default function HomePage() {
         <h2>Publications</h2>
         <div className="pub-list">
           {publications.map((pub) => (
-            <div key={pub.title} className="pub">
+            <div key={pub.title} className={pub.featured ? "pub pub-featured" : "pub"}>
               <PubMedia image={pub.image} video={pub.video} alt={pub.title} href={primaryUrl(pub)} />
               <div className="pub-body">
+                {pub.featured && <span className="pub-badge">★ Flagship · IFM world model</span>}
                 <h3 className="pub-title">
                   <a href={primaryUrl(pub)} target="_blank" rel="noopener noreferrer">{pub.title}</a>
                 </h3>

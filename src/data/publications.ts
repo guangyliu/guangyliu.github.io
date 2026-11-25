@@ -22,12 +22,14 @@ export interface Publication {
   tldr?: string;
   image: string;
   video?: string;
+  featured?: boolean;   // highlighted card with a badge (PAN 2)
   links: PubLink[];
 }
 
 export const publications: Publication[] = [
   {
     title: "PAN 2: A Foundation World Model for Physical Intelligence",
+    featured: true,
     authors: "PAN Team",
     venue: "Institute of Foundation Models, MBZUAI, 2026",
     tldr: "A general-purpose world model: given an observation and actions described in text, it simulates the outcome as a video of up to 20 seconds. A language model writes the next world state as a structured, time-grounded description, and a 29B diffusion model renders it.",

@@ -63,6 +63,33 @@
   align-items: start;
 }
 
+/* highlighted publication (PAN 2): tinted card, accent edge and a badge above the title */
+.pub-featured {
+  position: relative;
+  padding: 1rem;
+  margin: -0.25rem -1rem 0;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-emerald-500, #10b981) 35%, transparent);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--color-emerald-500, #10b981) 9%, transparent),
+    color-mix(in srgb, var(--color-violet-500, #8b5cf6) 6%, transparent));
+  box-shadow: 0 6px 24px -14px color-mix(in srgb, var(--color-emerald-600, #059669) 60%, transparent);
+}
+
+.pub-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(90deg, var(--color-emerald-600, #059669), var(--color-violet-600, #7c3aed));
+}
+
 .pub-media {
   aspect-ratio: 16 / 10;
   border-radius: 8px;
