@@ -84,8 +84,8 @@ export default function HomePage() {
       date: "Nov 2025",
       content: (
         <>
-          🚀 Excited to release <strong><em>PAN</em></strong>, a world model for general, interactable, and long-horizon world simulation! Check out interesting demos on the{" "}
-          <a href="https://ifm.mbzuai.ac.ae/pan/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">project page</a> and 📰{" "}
+          🚀 Excited to release <strong><em>PAN</em></strong>, a world model for general, interactable, and long-horizon world simulation! Check out the{" "}
+          <a href="https://arxiv.org/abs/2511.09057" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">technical report</a> and 📰{" "}
           <a href="https://www.forbes.com/sites/patrickmoorhead/2025/11/13/the-pan-world-model-from-mbzuai-aims-to-elevate-ai-simulation/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Forbes coverage</a>!
         </>
       )
@@ -189,7 +189,7 @@ export default function HomePage() {
             (Institute of Foundation Models), MBZUAI, where I build <strong>real-time, interactive world models</strong> — pushing on <strong>long-horizon generation</strong>, <strong>long-term memory</strong>, and <strong>efficient inference</strong> — with the goal of helping models understand how the world works and using that understanding to empower <strong>embodied agents</strong>.
             {" "}I've been developing the <strong>PAN</strong> series of world models:{" "}
             <a href="https://world-model.ai/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">Pandora</a>,{" "}
-            <a href="https://ifm.mbzuai.ac.ae/pan/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">PAN</a>, and{" "}
+            <a href="https://arxiv.org/abs/2511.09057" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">PAN</a>, and{" "}
             <a href="https://ifm.ai/blog/pan2/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-violet-600 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:decoration-violet-400 transition-all">PAN 2</a>.
           </p>
           <div className="hiring">

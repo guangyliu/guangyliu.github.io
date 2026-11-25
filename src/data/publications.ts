@@ -205,7 +205,6 @@ export const publications: Publication[] = [
     video: "/pubs/pan.mp4",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2511.09057" },
-      { label: "website", url: "https://ifm.mbzuai.ac.ae/pan/" },
       { label: "X (Twitter)", url: "https://x.com/guangyi_l/status/1989450577127117179?s=20" },
       { label: "Forbes", url: "https://www.forbes.com/sites/patrickmoorhead/2025/11/13/the-pan-world-model-from-mbzuai-aims-to-elevate-ai-simulation/" }
     ]
