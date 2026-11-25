@@ -27,6 +27,19 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "Simulator-as-Proxy World Model for Robot Manipulation",
+    authors: "Tingting Liao, Mingjia Huo, Hao Li, Zhengzhong Liu, Eric P. Xing, Guangyi Liu",
+    venue: "Preprint, 2026",
+    tldr: "Robot video world models are often conditioned on a simulated proxy, assuming the video shows what the proxy shows. SimPWM builds that proxy from the first frame (the robot as its 3D model, nearby objects as 3D points, moved by a rule-based simulator) and tests the assumption by freezing the simulated objects. The arm follows the proxy; the simulated objects cut missed pick-ups from 54% to 38%, but whether the video follows them depends on the base model.",
+    image: "/pubs/simpwm.jpg",
+    video: "/pubs/simpwm.mp4",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2611.32786" },
+      { label: "website", url: "https://sim-pwm.pages.dev" },
+      { label: "code", url: "https://github.com/TingtingLiao/SimPWM" }
+    ]
+  },
+  {
     title: "Point Dynamics as Proxy for Robotic World Models",
     authors: "Dong An, Tianyu Liu, Haoran Ding, Wen Yang, Anqing Duan, Zhengzhong Liu, Eric P. Xing, Guangyi Liu",
     venue: "Preprint, 2026",
